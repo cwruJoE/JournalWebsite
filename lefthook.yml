@@ -1,0 +1,10 @@
+pre-commit:
+  parallel: true
+  commands:
+    ggshield:
+      run: ggshield secret scan pre-commit
+      skip_if_no_files: false
+    commit_protect:
+      run: bash ./.github/hooks/commit_protect.sh
+      runner: sh
+      skip_if_no_files: false
