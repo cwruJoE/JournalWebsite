@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      run: npx prettier --write {staged_files}
+      include: "*.js,*.jsx,*.ts,*.tsx,*.json,*.css,*.cjs,*.scss,*.md"
+      exclude: "node_modules/**,dist/**, lefthook.yml, Makefile, .gitignore, .github/**, package.json, package-lock.json"
+    ggshield:
+      run: ggshield secret scan pre-commit
+      skip_if_no_files: false
+    commit_protect:
+      run: bash ./.github/hooks/commit_protect.sh
+      runner: sh
+      skip_if_no_files: false

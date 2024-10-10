@@ -1,0 +1,16 @@
+name: PR Branch Check
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check base branch
+        run: |
+          if [[ "${{ github.head_ref }}" != "dev" ]]; then
+            echo "PRs must be from the 'dev' branch."
+            exit 1
+          fi
