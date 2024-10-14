@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 interface GenericComponentProps {
     text: String;
@@ -8,8 +7,8 @@ interface GenericComponentProps {
 function App(props: GenericComponentProps) {
   return (
     <div>
-        <h3>props.text</h3>
-        <hr />
+        <h1 className="text-4xl font-marcellus mb-2">{props.text}</h1>
+        <hr className="border-black"/>
     </div>
   );
 }

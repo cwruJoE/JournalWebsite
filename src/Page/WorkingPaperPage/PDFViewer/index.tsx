@@ -5,8 +5,9 @@ interface PDFViewerProps {
 }
 
 function PDFViewer(props: PDFViewerProps) {
+
   return (
-    <iframe className="w-full md:h-300 hidden md:block select-none bg-gray-100 overflow-auto border-2" src={props.filePath} title=""/>
+    <iframe className="w-full md:block select-none h-screen bg-gray-100 border-2" src={props.filePath} title="PDF Viewer"/>
   );
 }
 
