@@ -14,7 +14,7 @@ const WorkingPapersPage = () => {
                 <Container>
                     <GenericHeading text="working paper 1" />
                     <div className="h-full my-5">
-                        <a className="text-lg" href="/pdf-viewer-test-file.pdf">Click here to open the document in a new tab</a>
+                        <a className="text-lg font-marcellus" href="/pdf-viewer-test-file.pdf" target="_blank">Click here to open the document in a new tab</a>
                         <PDFViewer filePath="/pdf-viewer-test-file.pdf" />
 
                     </div>
