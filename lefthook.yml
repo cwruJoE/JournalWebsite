@@ -6,5 +6,5 @@ pre-commit:
       skip_if_no_files: false
     commit_protect:
       run: bash ./.github/hooks/commit_protect.sh
-      runner: sh
+      runner: bash
       skip_if_no_files: false

@@ -1,5 +1,5 @@
 import React from 'react';
-import CurrentIssueComponent from "../../Component/CurrentIssueComponent ";
+import CurrentIssueComponent from "../../Component/CurrentIssueComponent";
 
 const HomePage = () => {
     return (
