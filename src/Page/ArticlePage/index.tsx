@@ -1,12 +1,24 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import Layout from '../WorkingPaperPage/PageLayout';
+import ArticleViewer from '../../Component/ArticleViewer';
+import CurrentIssueComponent from '../../Component/CurrentIssueComponent';
 
-const ArticlesPage = () => {
-    return (
-        <div>
-            <h1>Articles</h1>
-            <p>Here is a list of articles...</p>
-        </div>
-    );
+const ArticlePage: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+
+  return (
+    <Layout>
+      <Layout.MainSection>
+        {id && <ArticleViewer articleId={id} />}
+      </Layout.MainSection>
+      <Layout.SideSection>
+                <div className="mx-auto mt-8">
+                    <CurrentIssueComponent/>
+                </div>
+            </Layout.SideSection>
+    </Layout>
+  );
 };
 
-export default ArticlesPage;
+export default ArticlePage;
