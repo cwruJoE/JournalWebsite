@@ -1,31 +1,38 @@
 import React from 'react';
-import GenericHeading from "../../Component/GenericHeading";
-import CurrentIssueComponent from "../../Component/CurrentIssueComponent";
-import Container from "../../Component/Container";
-import PDFViewer from './PDFViewer';
+import PDFViewer from './PageLayout/Components/PDFViewer';
+import CurrentIssueComponent from '../../Component/CurrentIssueComponent'
+import Link from '../../Component/Link';
+import Layout from './PageLayout';
+import Header from '../../Component/Header';
 
 
 
-const WorkingPapersPage = () => {
+const WorkingPaperPage = () => {
     return (
-        <div className="flex flex-row align-top">
-            {/* Define row for content and CurrentIssueComponent */}
-            <div className="w-3/4">
-                <Container>
-                    <GenericHeading text="working paper 1" />
-                    <div className="h-full my-5">
-                        <a className="text-lg font-marcellus" href="/pdf-viewer-test-file.pdf" target="_blank">Click here to open the document in a new tab</a>
+        <Layout>
+            {/* Main Content Section */}
+            <Layout.MainSection>
+                <div className="container mt-10">
+                    <Header>
+                        <h1 className="text-5xl font-marcellus mb-2">Working paper 1</h1>
+                    </Header>
+                    <div className="h-full">
+                        <Link url="/pdf-viewer-test-file.pdf" label="Click here to open the document in a new tab" newTab={true} />
                         <PDFViewer filePath="/pdf-viewer-test-file.pdf" />
 
                     </div>
-                </Container>
-            </div>
-            <div className="w-1/4 mr-5">
-                <CurrentIssueComponent />
+                </div>
 
-            </div>
-        </div>
+            </Layout.MainSection>
+            {/* Side Section for Current Issue */}
+            <Layout.SideSection>
+                <div className="mx-auto mt-8">
+                    <CurrentIssueComponent/>
+                </div>
+            </Layout.SideSection>
+        </Layout>
     );
 };
 
-export default WorkingPapersPage;
+
+export default WorkingPaperPage;
