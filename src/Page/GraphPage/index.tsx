@@ -3,14 +3,14 @@ import CurrentIssueComponent from '../../Component/CurrentIssueComponent ';
 import Layout from "./PageLayout";
 import GraphImg from "../../assets/images/GraphImg.png";
 import KeywordButtonList from "./PageLayout/Componets/KeywordButtonList";
-import Header from "./PageLayout/Componets/Header";
+import Header from '../../Component/Header';
 
 const GraphPage = () => {
     return (
         <Layout>
             {/* Main Content Section */}
             <Layout.MainSection>
-                <div className="mx-auto mt-10">
+                <div className="container mt-10">
                     <Header>
                         <h1 className="text-7xl font-marcellus mb-2">Economic Indexes</h1>
                     </Header>
@@ -36,6 +36,8 @@ const GraphPage = () => {
                         </h3>
                         <KeywordButtonList indexes={['keyword #1', 'keyword #2', 'keyword #3']}/>
                     </Header>
+                    {/* Recent Article Content */}
+                    {/* Add the content of the most recent article */}
                 </div>
             </Layout.MainSection>
             {/* Side Section for Current Issue */}
