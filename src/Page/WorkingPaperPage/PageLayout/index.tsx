@@ -11,7 +11,7 @@ type LayoutComponent = FC<{
 
 const Layout: LayoutComponent = ({ children, ...restProps }) => {
     return (
-        <div className="flex flex-row align-top p-4" {...restProps}>
+        <div className="grid grid-cols-10 align-top p-4" {...restProps}>
             {children}
         </div>
     );
@@ -19,7 +19,7 @@ const Layout: LayoutComponent = ({ children, ...restProps }) => {
 
 const MainSection: FC<{ children: ReactNode; [restProps: string]: any }> = ({ children, ...restProps }) => {
     return (
-        <div className="w-3/4 mx-10" {...restProps}>
+        <div className="col-start-1 col-end-7 mx-10" {...restProps}>
             {children}
         </div>
     );
@@ -27,7 +27,7 @@ const MainSection: FC<{ children: ReactNode; [restProps: string]: any }> = ({ ch
 
 const SideSection: FC<{ children: ReactNode; [restProps: string]: any }> = ({ children, ...restProps }) => {
     return (
-        <div className="w-1/4" {...restProps}>
+        <div className="col-start-9 col-span-2" {...restProps}>
             {children}
         </div>
     );
