@@ -1,8 +1,7 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import ArticleViewer from "../../Component/ArticleViewer";
 import CurrentIssueComponent from "../../Component/CurrentIssueComponent";
-import Layout from "./PageLayout";
+import Layout from "../WorkingPaperPage/PageLayout";
 
 const ArticlePage: React.FC = () => {
   const { state } = useLocation();

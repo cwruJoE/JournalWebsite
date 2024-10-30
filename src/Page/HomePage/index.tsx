@@ -1,10 +1,10 @@
-import React from "react";
-import ArticleList from "../../Component/ArticleList";
 import { Article } from "../../Component/ArticleViewer";
 import CurrentIssueComponent from "../../Component/CurrentIssueComponent";
-import Layout from "./PageLayout";
+import { useNavigate } from "react-router-dom";
+import ArticlePreview from "../../Component/ArticlePreview";
+import Layout from "../WorkingPaperPage/PageLayout";
 
-const exampleArticles: Article[] = [
+export const exampleArticles: Article[] = [
   {
     id: "1",
     title: "Machine Learning Approaches in Climate Science",
@@ -171,10 +171,21 @@ const exampleArticles: Article[] = [
 ];
 
 const HomePage = () => {
+  const navigate = useNavigate();
   return (
     <Layout>
       <Layout.MainSection>
-        <ArticleList articles={exampleArticles} />
+        <div>
+          {exampleArticles.map((article) => (
+            <ArticlePreview
+              key={article.id}
+              article={article}
+              onClick={(id) =>
+                navigate(`/articles/${id}`, { state: { article } })
+              }
+            />
+          ))}
+        </div>
       </Layout.MainSection>
       <Layout.SideSection>
         <CurrentIssueComponent />

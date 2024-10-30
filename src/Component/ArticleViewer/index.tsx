@@ -1,5 +1,3 @@
-import React from "react";
-
 interface Keyword {
   id: string;
   text: string;
