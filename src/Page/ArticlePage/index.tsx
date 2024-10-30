@@ -1,22 +1,23 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import Layout from '../WorkingPaperPage/PageLayout';
-import ArticleViewer from '../../Component/ArticleViewer';
-import CurrentIssueComponent from '../../Component/CurrentIssueComponent';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import ArticleViewer from "../../Component/ArticleViewer";
+import CurrentIssueComponent from "../../Component/CurrentIssueComponent";
+import Layout from "./PageLayout";
 
 const ArticlePage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { state } = useLocation();
+  const article = state?.article;
+
+  if (!article) return <div>Article not found</div>;
 
   return (
     <Layout>
       <Layout.MainSection>
-        {id && <ArticleViewer articleId={id} />}
+        {article && <ArticleViewer article={article} />}
       </Layout.MainSection>
       <Layout.SideSection>
-                <div className="mx-auto mt-8">
-                    <CurrentIssueComponent/>
-                </div>
-            </Layout.SideSection>
+        <CurrentIssueComponent />
+      </Layout.SideSection>
     </Layout>
   );
 };
