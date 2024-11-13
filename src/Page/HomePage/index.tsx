@@ -2,7 +2,9 @@ import { Article } from "../../Component/ArticleViewer";
 import CurrentIssueComponent from "../../Component/CurrentIssueComponent";
 import { useNavigate } from "react-router-dom";
 import ArticlePreview from "../../Component/ArticlePreview";
-import Layout from "../WorkingPaperPage/PageLayout";
+import { useSelector } from "react-redux";
+import { selectAllArticles } from "../../store/slices/articleSlice";
+import Layout from "./PageLayout";
 
 export const exampleArticles: Article[] = [
   {
@@ -172,17 +174,17 @@ export const exampleArticles: Article[] = [
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const articles = useSelector(selectAllArticles);
+
   return (
     <Layout>
       <Layout.MainSection>
         <div>
-          {exampleArticles.map((article) => (
+          {articles.map((article) => (
             <ArticlePreview
               key={article.id}
               article={article}
-              onClick={(id) =>
-                navigate(`/articles/${id}`, { state: { article } })
-              }
+              onClick={(id) => navigate(`/articles/${id}`)}
             />
           ))}
         </div>

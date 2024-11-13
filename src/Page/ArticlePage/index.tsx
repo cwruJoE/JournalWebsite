@@ -1,18 +1,21 @@
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import ArticleViewer from "../../Component/ArticleViewer";
 import CurrentIssueComponent from "../../Component/CurrentIssueComponent";
-import Layout from "../WorkingPaperPage/PageLayout";
+import Layout from "./PageLayout";
+import { selectAllArticles } from "../../store/slices/articleSlice";
 
 const ArticlePage: React.FC = () => {
-  const { state } = useLocation();
-  const article = state?.article;
+  const { id } = useParams<{ id: string }>();
+  const articles = useSelector(selectAllArticles);
+  const article = articles.find(article => article.id === id);
 
   if (!article) return <div>Article not found</div>;
 
   return (
     <Layout>
       <Layout.MainSection>
-        {article && <ArticleViewer article={article} />}
+        <ArticleViewer article={article} />
       </Layout.MainSection>
       <Layout.SideSection>
         <CurrentIssueComponent />

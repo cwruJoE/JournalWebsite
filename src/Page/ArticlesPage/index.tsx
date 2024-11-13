@@ -1,11 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import { exampleArticles } from "../HomePage";
-import Layout from "../WorkingPaperPage/PageLayout";
+import { useSelector } from "react-redux";
 import ArticlePreview from "../../Component/ArticlePreview";
 import CurrentIssueComponent from "../../Component/CurrentIssueComponent";
+import { selectAllArticles } from "../../store/slices/articleSlice";
+import Layout from "./PageLayout";
 
 const ArticlesPage = () => {
   const navigate = useNavigate();
+  const articles = useSelector(selectAllArticles);
+  
   return (
     <Layout>
       <Layout.MainSection>
@@ -13,13 +16,11 @@ const ArticlesPage = () => {
           Recent Articles
         </h2>
         <div>
-          {exampleArticles.map((article) => (
+          {articles.map((article) => (
             <ArticlePreview
               key={article.id}
               article={article}
-              onClick={(id) =>
-                navigate(`/articles/${id}`, { state: { article } })
-              }
+              onClick={(id) => navigate(`/articles/${id}`)}
             />
           ))}
         </div>
