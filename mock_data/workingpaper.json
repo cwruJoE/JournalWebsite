@@ -1,0 +1,9 @@
+{
+    "title": "The WealthLine—Examining the Effect of the HealthLine Bus Rapid Transit on Resident Employment",
+    "authors" : ["John McCormick"],
+    "division" : "Working Papers",
+    "issue" : "Winter 2024",
+    "keywords" : ["Bus Rapid Transit", "Employment", "Cleveland", "HealthLine", "Employment Outcomes", "Economic Development", "Public Transportation", "Urban Development", "Urban Infrastructure"],
+    "abstract" : "This paper analyzes the impact of the HealthLine Bus Rapid Transit (BRT) line, opened in 2008 to connect two major economic hubs in Cleveland, on local resident employment outcomes. With large federal grants allocated towards public transit nationwide, understanding the effects of transit expansion becomes increasingly important. Using the Longitudinal Employer-Household Dynamics Origin-Destination Employment Statistics (LODES) dataset and Census Block Group level American Community Survey (ACS) 5-year data from 2004-2013, we utilize two-way fixed effects difference-in-differences and triple difference-in-differences methodologies, to analyze the impact of the HealthLine opening on resident employment at the Census Block Group level in Cuyahoga County. We find that while the HealthLine’s introduction did not significantly affect overall employment for residents living along the Euclid corridor, it did raise the healthcare job share for these communities by 3 percentage points. Notably, for areas with higher educational attainment, we found significant increases to overall employment, showing the importance of increased education in conjunction with transit access. These findings inform urban development and revitalization strategies that integrate increased education access with public transit improvements.",
+    "pdf" : "s3/example_workingpaper.pdf",
+}
